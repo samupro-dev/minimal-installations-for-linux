@@ -21,5 +21,5 @@ npm
 git
 curl
 apache2
-php7.4
+php7.3
 java-8
