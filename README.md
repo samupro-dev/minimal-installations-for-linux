@@ -21,5 +21,5 @@ After that, just follow the instructions given by the script.
 - git
 - curl
 - apache2
-- php7.3
+- php 7.3
 - java-8
