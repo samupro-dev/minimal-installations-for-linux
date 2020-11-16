@@ -8,18 +8,18 @@ Download the "install-minimal.sh" file and follow the commands:<br/>
 After that, just follow the instructions given by the script.
 
 ## Packages that will be installed:
-unzip
-zip
-tar
-perl
-wget
-nodejs
-python3
-pip3
-htop
-npm
-git
-curl
-apache2
-php7.3
-java-8
+- unzip
+- zip
+- tar
+- perl
+- wget
+- nodejs
+- python3
+- pip3
+- htop
+- npm
+- git
+- curl
+- apache2
+- php7.3
+- java-8
