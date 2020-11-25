@@ -1,6 +1,6 @@
 #!/bin/bash
 DONE="\e[0;32m ✔\e[0m"
-ERROR="\e[0;31m X\e[0m"
+ERROR="\e[0;31m ✘\e[0m"
 YELLOW="\e[1;33m"
 LIGHT_RED="\e[1;31m"
 LIGHT_GREEN="\e[1;32m"
@@ -8,6 +8,7 @@ COLOR_NULL="\e[0m"
 LIGHT_BLUE="\e[1;34m"
 PURPLE="\e[0;35m"
 
+echo -e "\n"
 echo -e "${PURPLE}  ██████  ▄▄▄       ███▄ ▄███▓ █    ██  ██▓███   ██▀███   ▒█████  
 ▒██    ▒ ▒████▄    ▓██▒▀█▀ ██▒ ██  ▓██▒▓██░  ██▒▓██ ▒ ██▒▒██▒  ██▒
 ░ ▓██▄   ▒██  ▀█▄  ▓██    ▓██░▓██  ▒██░▓██░ ██▓▒▓██ ░▄█ ▒▒██░  ██▒
@@ -17,10 +18,22 @@ echo -e "${PURPLE}  ██████  ▄▄▄       ███▄ ▄██�
 ░ ░▒  ░ ░  ▒   ▒▒ ░░  ░      ░░░▒░ ░ ░ ░▒ ░       ░▒ ░ ▒░  ░ ▒ ▒░ 
 ░  ░  ░    ░   ▒   ░      ░    ░░░ ░ ░ ░░         ░░   ░ ░ ░ ░ ▒  
       ░        ░  ░       ░      ░                 ░         ░ ░  ${COLOR_NULL}"
+echo -e "\n"
 echo -e "${LIGHT_BLUE} This script will install the minimum things to get a VPS running. ${COLOR_NULL}"
 sleep 1
 echo -e "\n"
 
+while true
+do
+    read -r -p ' Do you want to continue? (Y/N): ' choice
+    case "$choice" in
+      n|N|no|No|NO) exit;;
+      y|Y|yes|Yes|YES) break;;
+      *) echo -e "${ERROR} ${LIGHT_RED}The argument you entered is incorrect! ${COLOR_NULL}";;
+    esac
+done
+
+echo -e "\n"
 echo -e " ${YELLOW} Control of administration permissions. . . ${COLOR_NULL}"
 if [ "$(id -u)" != "0" ] ; then
 	echo " ${ERROR} ${LIGHT_RED}This script requires root permissions. Please run this as root! ${COLOR_NULL}"
